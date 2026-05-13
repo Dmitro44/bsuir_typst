@@ -20,7 +20,8 @@
 // например font: "GOST Type B"
 
 // Рамка отсутствует (stroke:0pt), удобно для обратной стороны плаката
-#stp2024.frame(paper:"a4",stroke:0pt, type:"a", config:conf)[]
+// Перенос основной надписи налево (position_left: true), чтобы при двусторонней печати она не попала под переплет
+#stp2024.frame(paper:"a4",stroke:0pt, type:"a", position_left: true, config:conf)[]
 
 // Рамка A4
 #stp2024.frame(paper:"a4", font:"GOST type B", type:"a", config:conf)[
