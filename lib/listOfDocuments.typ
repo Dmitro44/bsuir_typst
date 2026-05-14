@@ -167,9 +167,13 @@
   set text(
     13pt,
     font: font,
-    style: "italic",
+    style: "normal",
     hyphenate: false,
+    top-edge: "bounds",
+    bottom-edge: "baseline",
   )
+
+  show text: it => box(skew(ax: -17deg, reflow: false, it))
 
   grid(
     columns: (auto, auto),

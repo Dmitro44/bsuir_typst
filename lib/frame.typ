@@ -54,9 +54,26 @@
   set text(
     9pt,
     font: font,
-    style: "italic",
+    style: if font == "GOST type B" { "normal" } else { "italic" },
     hyphenate: false,
   )
+
+  show: it => {
+    if font == "GOST type B" {
+      set text(top-edge: "bounds", bottom-edge: "baseline")
+      it
+    } else {
+      it
+    }
+  }
+
+  show text: it => {
+    if font == "GOST type B" {
+      box(skew(ax: -17deg, reflow: false, it))
+    } else {
+      it
+    }
+  } 
 
   import table: cell
 
